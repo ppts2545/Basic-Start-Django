@@ -1,9 +1,9 @@
 from django.shortcuts import render
+from django.http import HttpRequest
 
 def say_hello(request):
-    """Renders the 'hello.html' template with dynamic content."""
-    context = {'name': 'Poom', 'age': 21}  # Combine name and age into one dictionary
-    return render(request, 'hello.html', context)
+    
+    return render(request, 'hello.html')
 
 def page1Render(request):
     """Renders the 'page1.html' template without any dynamic content."""
