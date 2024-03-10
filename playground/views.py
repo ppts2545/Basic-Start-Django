@@ -7,18 +7,24 @@ def say_hello(request):
     return render(request, 'hello.html', {"all_person":all_person})
 
 def page1Render(request):
-    """Renders the 'page1.html' template without any dynamic content."""
     return render(request, 'page1.html')
 
+
 def pageFormRender(request):
-    """Renders the 'form.html' template without any dynamic content."""
+    
     if request.method == "POST":
         #รับข้อมูล
-        name = request.POST["name"]
-        age = request.POST["age"]
-        print(name ,age)
-        return redirect("/")
+        name = request.POST['name']
+        age = request.POST['age']
+        print(name , age)
         #บันทึกข้อมูล
+        person = Person.objects.create(
+            name = name,
+            age = age
+        )
+        person.save()
+        #เปลี่ยนเส้นทาง
+        return redirect("/")
      
     else :
         return render(request, 'form.html')
