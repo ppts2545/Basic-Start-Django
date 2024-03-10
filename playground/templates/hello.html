@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>my firstpage</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Hello  {{ name }} </h1>
+    <h3>you are {{ age }} yearold.</h3>
+    {% if age >= 30 %}
+        <h3>You are puyai</h3>
+    {% else %}
+        <h3>You are adult</h3>
+    {% endif %}
+{% endblock %}
