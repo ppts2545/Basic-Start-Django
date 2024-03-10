@@ -5,16 +5,20 @@
 {% endblock %}
 
 {% block content %}
-    <h1>This is our Form.   </h1>
-    
-    <p> 
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ips
-        um has been the industry's standard dummy text ever since the 1500s, when an unknown
-        printer took a galley of type and scrambled it to make a type specimen book. It has 
-        survived not only five centuries, but also the leap into electronic typesetting, 
-        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-        sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-    </p>
+    <h2 class="text-center">This is our Form.   </h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" name="name" class="form-control">
+        </div>
+        <div class="form-group mb-3">
+            <label for="age">age</label>
+            <input type="text" name="age" class="form-control">
+        </div>
+        <input type="submit" value="save Data" class="btn btn-success mt-3">    
+    </form>
+   
 {% endblock %}
 
 

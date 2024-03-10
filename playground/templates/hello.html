@@ -5,5 +5,28 @@
 {% endblock %}
 
 {% block content %}
-    {{all_person}}
+<table class="table table-dark table-striped">
+    <h2 class="text-center">Informaiton User</h2>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">age</th>
+        <th scope="col">change</th>
+        <th scope="col">delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for person in all_person %} 
+        <tr>
+            <th scope="row">{{person.ID}}</th></th>
+            <td>{{person.name}}</td>
+            <td>{{person.age}}</td> 
+            <td><a href="#" class="btn btn-warning">change</a></td> 
+            <td><a href="#" class="btn btn-danger">delete</a></td>     
+        </tr>    
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 {% endblock %}
